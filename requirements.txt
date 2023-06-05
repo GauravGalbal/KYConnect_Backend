@@ -1,0 +1,9 @@
+pillow
+opencv-python-headless
+numpy
+pyzbar
+pyaadhaar
+xmltodict
+pytesseract
+psutil
+deepface
