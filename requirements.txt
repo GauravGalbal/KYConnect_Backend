@@ -1,7 +1,6 @@
 opencv-python-headless
 numpy
-Pillow==6.2.2
-pyzbar==0.1.8
+Pillow
 pyaadhaar
 xmltodict
 pytesseract
