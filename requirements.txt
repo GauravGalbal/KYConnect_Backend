@@ -6,4 +6,4 @@ xmltodict
 pytesseract
 psutil
 deepface
-zbar
+pyzbar
