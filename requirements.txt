@@ -1,3 +1,4 @@
+zbar
 opencv-python-headless
 numpy
 Pillow
