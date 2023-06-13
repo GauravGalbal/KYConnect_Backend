@@ -10,6 +10,8 @@ COPY package*.json ./
 # Install npm dependencies
 RUN npm install
 
+COPY . .
+
 # Expose the port on which your Express application runs (replace 3000 with your desired port)
 EXPOSE 8000
 
