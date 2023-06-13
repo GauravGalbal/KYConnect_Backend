@@ -29,7 +29,7 @@ COPY package*.json ./
 RUN npm install
 
 # Expose the port on which your Express application runs (replace 3000 with your desired port)
-EXPOSE 3000
+EXPOSE 8000
 
 # Specify the command to run your application
 CMD [ "npm", "start" ]
