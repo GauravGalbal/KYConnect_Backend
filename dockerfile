@@ -28,6 +28,9 @@ COPY package*.json ./
 # Install npm dependencies
 RUN npm install
 
+# Add the path of installed Python dependencies to the system's PATH variable
+ENV PATH="/app/python"
+
 # Expose the port on which your Express application runs (replace 8000 with your desired port)
 EXPOSE 8000
 
