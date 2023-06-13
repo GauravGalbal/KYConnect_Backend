@@ -16,7 +16,7 @@ COPY . .
 # Install Python and necessary packages
 RUN apt-get update && \
     apt-get install -y python3 python3-pip && \
-    pip3 install --no-cache-dir zbar opencv-python-headless Pillow pyaadhaar xmltodict pytesseract psutil deepface pyzbar
+    pip3 install --no-cache-dir zbar opencv-python-headless numpy==1.19.3 Pillow pyaadhaar xmltodict pytesseract psutil deepface pyzbar
 
 # Expose the port on which your Express application runs (replace 3000 with your desired port)
 EXPOSE 8000
