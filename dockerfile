@@ -20,7 +20,7 @@ FROM node:14
 WORKDIR /app
 
 # Copy the built Python application from the previous stage
-COPY --from=python_builder . .
+COPY --from=python_builder /app /app
 
 # Copy the package.json and package-lock.json files to the working directory
 COPY package*.json ./
