@@ -17,7 +17,7 @@ COPY . .
 FROM node:14
 
 # Set the working directory for Node.js runtime
-WORKDIR /app/node
+WORKDIR /app
 
 # Copy the built Python application from the previous stage
 COPY --from=python_builder /app/python .
