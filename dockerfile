@@ -13,9 +13,6 @@ RUN npm install
 # Copy the rest of the project files to the working directory
 COPY . .
 
-# Build your Node.js application
-RUN npm run build
-
 # Stage 2: Python runtime
 FROM python:3.9
 
