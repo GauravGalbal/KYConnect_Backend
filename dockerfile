@@ -17,5 +17,3 @@ EXPOSE 8000
 
 # Specify the command to run your application
 CMD [ "npm", "start" ]
-
-CMD docker run
