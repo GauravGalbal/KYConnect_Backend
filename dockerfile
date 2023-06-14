@@ -13,7 +13,7 @@ RUN npm install
 
 # Install Python libraries
 COPY requirements.txt ./
-RUN pip3 install -r requirements.txt
+RUN python3.7 -m pip install --no-cache-dir --ignore-installed -r requirements.txt
 
 # Copy the rest of the project files to the working directory
 COPY . .
