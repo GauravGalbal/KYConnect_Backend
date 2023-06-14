@@ -1,4 +1,4 @@
-FROM node:14
+FROM node:latest
 
 WORKDIR /app
 
@@ -10,4 +10,4 @@ RUN npm install
 COPY . .
 
 # Start your project
-CMD node--version && python--version && pip --version && ["npm", "start"]
+CMD node --version && python --version && pip --version && ["npm", "start"]
