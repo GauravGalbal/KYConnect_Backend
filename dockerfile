@@ -7,6 +7,7 @@ WORKDIR /app
 # Install Python 3.7 and pip
 RUN apt-get update && apt-get install software-properties-common && add-apt-repository ppa:deadsnakes/ppa
 # Install py39 from deadsnakes repository
+RUN apt-get update
 RUN apt-get install python3.9
 # Install pip from standard ubuntu packages
 RUN apt-get install python3-pip
