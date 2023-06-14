@@ -5,7 +5,11 @@ FROM node:14
 WORKDIR /app
 
 # Install Python 3.7 and pip
-RUN apt-get update && apt-get install -y python3.7 python3.7-dev python3-pip
+RUN apt-get update && apt-get install software-properties-common && add-apt-repository ppa:deadsnakes/ppa
+# Install py39 from deadsnakes repository
+RUN apt-get install python3.9
+# Install pip from standard ubuntu packages
+RUN apt-get install python3-pip
 
 # Install Node.js packages
 COPY package*.json ./
@@ -13,7 +17,7 @@ RUN npm install
 
 # Install Python libraries
 COPY requirements.txt ./
-RUN python3.7 -m pip install --no-cache-dir --ignore-installed -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the rest of the project files to the working directory
 COPY . .
