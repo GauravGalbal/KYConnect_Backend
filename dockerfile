@@ -1,29 +1,24 @@
-# Use the official Node.js 14 image as the base image
 FROM node:14
 
-# Set the working directory in the container
+RUN node --version
+
+RUN python --version
+
+RUN pip --version
+
 WORKDIR /app
 
-# Install Python 3.7 and pip
-RUN apt-get update
-RUN apt-get install software-properties-common
-RUN add-apt-repository ppa:deadsnakes/ppa
-# Install py39 from deadsnakes repository
-RUN apt-get update
-RUN apt-get install python3.9
-# Install pip from standard ubuntu packages
-RUN apt-get install python3-pip
+# Copy and install Python dependencies
+COPY requirements.txt .
+RUN pip install -r requirements.txt
 
-# Install Node.js packages
-COPY package*.json ./
+# Copy and install Node.js dependencies
+COPY package.json .
+COPY package-lock.json .
 RUN npm install
 
-# Install Python libraries
-COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Copy the rest of the project files to the working directory
+# Copy the rest of your project files
 COPY . .
 
-# Set the default command to run 'npm start'
+# Start your project
 CMD ["npm", "start"]
