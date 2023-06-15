@@ -19,4 +19,4 @@ RUN npm install
 COPY . .
 
 # Start your project
-CMD node --version && python --version && pip --version && ["npm", "start"]
+CMD node --version && python3 --version && pip3 --version && ["npm", "start"]
