@@ -1,7 +1,8 @@
 FROM node:latest
 
 # Install Python 3.9
-RUN apt-get update && apt-get install -y python3.9
+RUN apt update
+RUN apt install python3 -y
 
 # Install pip for Python 3.9
 # RUN apt-get install -y python3.9-distutils
