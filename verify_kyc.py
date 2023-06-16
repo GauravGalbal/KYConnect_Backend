@@ -15,11 +15,11 @@ from deepface import DeepFace
 from datetime import datetime
 
 # Defining tesserct Path
-cwd = os.getcwd()
-relative_path = "tesseract_OCR"
-filename = "tesseract.exe"
-full_path = os.path.join(cwd, relative_path, filename)
-pytesseract.pytesseract.tesseract_cmd = full_path  
+# cwd = os.getcwd()
+# relative_path = "tesseract_OCR"
+# filename = "tesseract.exe"
+# full_path = os.path.join(cwd, relative_path, filename)
+# pytesseract.pytesseract.tesseract_cmd = full_path  
 
 # Save the Pan Card Path URL
 # pan_card_image_path = "http://localhost:8000/profile/pan.jpg"
@@ -242,9 +242,10 @@ def face_verification():
         return face_detect
 
 final_info = aadhaar_verification_extraction()
-pan_number = pancard_extraction()
+# pan_number = pancard_extraction()
 
-append_pan = {"pan_number": pan_number[0]}
+pan_number = "DSFPG6780K"
+append_pan = {"pan_number": pan_number}
 data = json.loads(final_info)
 data.update(append_pan)
 final_info = json.dumps(data, indent=4)
