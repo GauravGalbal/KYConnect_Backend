@@ -6,6 +6,8 @@ RUN apt install python3 -y
 
 RUN apt-get -y install python3-pip
 
+RUN pip3 install -r requirements.txt
+
 WORKDIR /app
 
 # Copy and install Node.js dependencies
