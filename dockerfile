@@ -9,7 +9,7 @@ RUN apt-get -y install python3-pip
 RUN pip install pip==22.3.1 --break-system-packages
 
 COPY requirements.txt ./
-RUN pip3 install pyzbar
+RUN pip3 install -r requirements.txt
 
 WORKDIR /app
 
