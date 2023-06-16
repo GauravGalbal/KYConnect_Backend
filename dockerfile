@@ -7,7 +7,7 @@ RUN apt install python3 -y
 RUN apt-get -y install python3-pip
 
 COPY requirements.txt ./
-RUN pip3 install -r requirements.txt
+RUN pip3 install --no-cache-dir -r requirements.txt
 
 WORKDIR /app
 
@@ -19,4 +19,4 @@ RUN npm install
 COPY . .
 
 # Start your project
-CMD node --version && python3 --version && pip3 --version && ["npm", "start"]
+CMD ["npm", "start"]
