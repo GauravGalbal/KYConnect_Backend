@@ -20,5 +20,7 @@ RUN npm install
 # Copy the rest of your project files
 COPY . .
 
+CMD puthon --version
+
 # Start your project
 CMD ["npm", "start"]
