@@ -25,8 +25,8 @@ let transporter = nodemailer.createTransport({
 
 
 const secretKey = 'mySecretKey';
-// const URL = "https://kyconnect.onrender.com"
-const URL = "http://localhost:8000"
+const URL = "https://kyconnectfinalbackend.onrender.com/"
+// const URL = "http://localhost:8000"
 
 let dataCompare
 
@@ -212,19 +212,19 @@ router.post("/saveCustomer", upload.fields([{name:'selfieImage'},{name:'signatur
                 });
 
                 try{               
-                    // let info = await transporter.sendMail({
-                    //   from: 'galbalgaurav3@gmail.com',
-                    //   to: newCustomer.email,
-                    //   subject: "Declaration Form",
-                    //   body: "You have successfully completed the process... Here is your declaration form",
-                    //    // Embedded image links to content ID
-                    //   attachments: [{
-                    //     filename: `${newCustomer.firstName}_Declaration.pdf`,
-                    //     path: './routes/pdfs/output.pdf',
-                    //   //   cid: 'unique@gmail.com' // Sets content ID
-                    //   }]
-                    // });
-                    // console.log(info.messageId);
+                    let info = await transporter.sendMail({
+                      from: process.env.MAIL_USER,
+                      to: newCustomer.email,
+                      subject: "Declaration Form",
+                      body: "You have successfully completed the process... Here is your declaration form",
+                       // Embedded image links to content ID
+                      attachments: [{
+                        filename: `${newCustomer.firstName}_Declaration.pdf`,
+                        path: './routes/pdfs/output.pdf',
+                      //   cid: 'unique@gmail.com' // Sets content ID
+                      }]
+                    });
+                    console.log(info.messageId);
                     res.send("goboi")
                   }catch(err){
                     console.log(err)
