@@ -4,6 +4,8 @@ const { spawn } = require('child_process')
 const path = require('path');
 const fs = require('fs');
 const nodemailer = require("nodemailer");
+const dotenv = require('dotenv')
+dotenv.config()
 
 
 
@@ -225,10 +227,10 @@ router.post("/saveCustomer", upload.fields([{name:'selfieImage'},{name:'signatur
                       }]
                     });
                     console.log(info.messageId);
-                    res.send("goboi")
                   }catch(err){
                     console.log(err)
                 }
+        res.send("goboi")
             // }
             // }
         // }
